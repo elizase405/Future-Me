@@ -61,25 +61,25 @@ export default function MessageForm( {lightMode}: {lightMode: boolean} ) {
   name="message"
   required
   placeholder="Hi dear future me, I hope you're doing well..."
-  className={`text-sm md:text-base lg:text-lg w-full h-56 md:h-70 bg-transparent border border-neutral-700 rounded-xl p-3 md:p-4 ${lightMode ? "text-neutral-900" : "text-neutral-100"} placeholder-gray-500 focus:outline-none focus:border-neutral-500 transition-all duration-300 hover:scale-[1.01]`}
+  className={`text-sm md:text-base w-full h-56 md:h-70 bg-transparent border border-neutral-700 rounded-xl p-3 md:p-4 ${lightMode ? "text-neutral-900" : "text-neutral-100"} placeholder-gray-500 focus:outline-none focus:border-neutral-500 transition-all duration-300 hover:scale-[1.01]`}
  />
 
 
-      <p className="text-xs md:text-base lg:text-lg text-[#8a857d]">
+      <p className="text-xs md:text-base text-[#8a857d]">
         Say anything. Only your future self will read this.
       </p>
 <input
   type="email"
   name="email"
   placeholder="Email"
-  className={`text-sm md:text-base lg:text-lg w-full bg-transparent border border-neutral-700 rounded-xl p-3 ${lightMode ? "text-neutral-900" : "text-neutral-100"} focus:outline-none focus:border-neutral-500 transition-all duration-300 hover:scale-[1.01]`}
+  className={`text-sm md:text-base w-full bg-transparent border border-neutral-700 rounded-xl p-3 ${lightMode ? "text-neutral-900" : "text-neutral-100"} focus:outline-none focus:border-neutral-500 transition-all duration-300 hover:scale-[1.01]`}
   required
 />
 
 <input
   type="date"
   name="deliverAt"
-  className={`text-sm md:text-base lg:text-lg w-full bg-transparent border border-neutral-700 rounded-xl p-3 ${lightMode ? "text-neutral-900 scheme-light" : "text-neutral-100 scheme-dark"} outline-none focus:border-neutral-500 transition-all duration-300 hover:scale-[1.01]`}
+  className={`text-sm md:text-base w-full bg-transparent border border-neutral-700 rounded-xl p-3 ${lightMode ? "text-neutral-900 scheme-light" : "text-neutral-100 scheme-dark"} outline-none focus:border-neutral-500 transition-all duration-300 hover:scale-[1.01]`}
   required
 />
 
