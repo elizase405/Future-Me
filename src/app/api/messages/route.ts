@@ -16,13 +16,13 @@ export async function POST(req: Request){
   const { success } = await ratelimit.limit(ip)
 
   if (!success) {
-    return NextResponse.json({ error: "Too many requests. Please try again later." }, { status: 429 })
     console.log("Rate limit exceeded for IP:", ip);
+    return NextResponse.json({ error: "Too many requests. Please try again later." }, { status: 429 })
   }
 
   if (!email || !message || !deliverAt || !theme) {
-    return NextResponse.json({error: "Missing fields"}, {status: 400})
     console.log("Validation failed: Missing fields", { email, message, deliverAt, theme });
+    return NextResponse.json({error: "Missing fields"}, {status: 400})
   }
 
   // const token = crypto.randomUUID();
@@ -34,8 +34,8 @@ export async function POST(req: Request){
   });
 
   if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 })
     console.log("Database insertion error:", error);
+    return NextResponse.json({ error: error.message }, { status: 500 })
   }
 
   const verifyUrl = `${process.env.BASE_URL}/api/verify?token=${token}`;
@@ -66,6 +66,6 @@ export async function POST(req: Request){
 `
   })
 
-  return NextResponse.json({ success: true })
   console.log("Message received and verification email sent for:", email);
+  return NextResponse.json({ success: true })
 }
