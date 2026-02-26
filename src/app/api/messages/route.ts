@@ -17,10 +17,12 @@ export async function POST(req: Request){
 
   if (!success) {
     return NextResponse.json({ error: "Too many requests. Please try again later." }, { status: 429 })
+    console.log("Rate limit exceeded for IP:", ip);
   }
 
   if (!email || !message || !deliverAt || !theme) {
     return NextResponse.json({error: "Missing fields"}, {status: 400})
+    console.log("Validation failed: Missing fields", { email, message, deliverAt, theme });
   }
 
   // const token = crypto.randomUUID();
@@ -33,6 +35,7 @@ export async function POST(req: Request){
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 })
+    console.log("Database insertion error:", error);
   }
 
   const verifyUrl = `${process.env.BASE_URL}/api/verify?token=${token}`;
@@ -64,4 +67,5 @@ export async function POST(req: Request){
   })
 
   return NextResponse.json({ success: true })
+  console.log("Message received and verification email sent for:", email);
 }
