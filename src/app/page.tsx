@@ -41,10 +41,10 @@ export default function Home() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className=" flex flex-col items-center md:items-start"
+        className=" flex flex-col items-center"
       >
         <div
-          className="flex items-center mb-8"
+          className="flex self-center md:self-start mb-8"
           aria-label="Logo and app name"
         >
           <Logo />
@@ -57,7 +57,7 @@ export default function Home() {
         </div>
 
         {/* Form */}
-        <div className={`mt-6 md:mt-12 border ${lightMode ? "border-gray-200 bg-white shadow-lg" : "border-neutral-800 bg-neutral-900/60"} w-9/10 md:w-full rounded-2xl p-6 md:p-8 backdrop-blur hover:shadow-[0_0_0_1px_rgba(255,255,255,0.05)] transition-shadow duration-300`}>
+        <div className={`md:mt-6 border ${lightMode ? "border-gray-200 bg-white shadow-lg" : "border-neutral-800 bg-neutral-900/60"} w-9/10 md:w-full rounded-2xl p-6 md:p-8 backdrop-blur hover:shadow-[0_0_0_1px_rgba(255,255,255,0.05)] transition-shadow duration-300`}>
           <MessageForm lightMode={lightMode} />
         </div>
 
