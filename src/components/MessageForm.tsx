@@ -56,38 +56,38 @@ export default function MessageForm( {lightMode}: {lightMode: boolean} ) {
     </p>
   </div>
 ) : (
-    <form onSubmit={handleSubmit} className="max-w-xl mx-auto mt-8 space-y-6">
+    <form onSubmit={handleSubmit} className="max-w-xl mx-auto mt-4 md:mt-8 space-y-5 md:space-y-6">
       <textarea
   name="message"
   required
   placeholder="Hi dear future me, I hope you're doing well..."
-  className={`w-full h-70 bg-transparent border border-neutral-700 rounded-xl p-4 ${lightMode ? "text-neutral-900" : "text-neutral-100"} placeholder-gray-500 focus:outline-none focus:border-neutral-500 transition-all duration-300 hover:scale-[1.01]`}
+  className={`text-sm md:text-base lg:text-lg w-full h-56 md:h-70 bg-transparent border border-neutral-700 rounded-xl p-3 md:p-4 ${lightMode ? "text-neutral-900" : "text-neutral-100"} placeholder-gray-500 focus:outline-none focus:border-neutral-500 transition-all duration-300 hover:scale-[1.01]`}
  />
 
 
-      <p className="text-sm text-[#8a857d]">
+      <p className="text-xs md:text-base lg:text-lg text-[#8a857d]">
         Say anything. Only your future self will read this.
       </p>
 <input
   type="email"
   name="email"
   placeholder="Email"
-  className={`w-full bg-transparent border border-neutral-700 rounded-xl p-3 ${lightMode ? "text-neutral-900" : "text-neutral-100"} focus:outline-none focus:border-neutral-500 transition-all duration-300 hover:scale-[1.01]`}
+  className={`text-sm md:text-base lg:text-lg w-full bg-transparent border border-neutral-700 rounded-xl p-3 ${lightMode ? "text-neutral-900" : "text-neutral-100"} focus:outline-none focus:border-neutral-500 transition-all duration-300 hover:scale-[1.01]`}
   required
 />
 
 <input
   type="date"
   name="deliverAt"
-  className={`w-full bg-transparent border border-neutral-700 rounded-xl p-3 ${lightMode ? "text-neutral-900 scheme-light" : "text-neutral-100 scheme-dark"} outline-none focus:border-neutral-500 transition-all duration-300 hover:scale-[1.01]`}
+  className={`text-sm md:text-base lg:text-lg w-full bg-transparent border border-neutral-700 rounded-xl p-3 ${lightMode ? "text-neutral-900 scheme-light" : "text-neutral-100 scheme-dark"} outline-none focus:border-neutral-500 transition-all duration-300 hover:scale-[1.01]`}
   required
 />
 
-<div className="flex gap-2 text-sm text-neutral-400">
+<div className="flex items-center justify-center gap-2 text-xs md:text-sm text-neutral-400">
   {["gentle", "celebratory", "reflective"].map((t) => (
     <label
       key={t}
-      className={`px-3 py-1 rounded-full border border-neutral-700 cursor-pointer transition hover:border-neutral-500 ${ lightMode ? "has-[:checked]:border-black has-[:checked]:text-black" : "has-[:checked]:border-white has-[:checked]:text-white"}`}
+      className={`w-4/5 text-center py-1 px-2 rounded-full border border-neutral-700 cursor-pointer transition hover:border-neutral-500 ${ lightMode ? "has-[:checked]:border-blue-800 has-[:checked]:text-black" : "has-[:checked]:border-blue-500 has-[:checked]:text-white"}`}
     >
       <input
         type="radio"
@@ -101,12 +101,11 @@ export default function MessageForm( {lightMode}: {lightMode: boolean} ) {
   ))}
 </div>
 
-
 <button
   type="submit"
   disabled={loading}
   className={`
-    w-full mt-2 rounded-xl font-medium py-3
+    text-sm md:text-base w-full mt-2 rounded-xl font-medium py-3
     bg-gradient-to-r from-slate-600 via-indigo-700 to-slate-800
     text-white
     transition
