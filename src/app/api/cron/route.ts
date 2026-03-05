@@ -4,6 +4,8 @@ import { resend } from "@/lib/resend";
 import { futureMessageEmail } from "@/lib/emailTemplates";
 import { decrypt } from "@/lib/crypto";
 
+export const revalidate = 0; // Ensures the function is not cached
+
 export async function GET() {
     const today = new Date().toISOString().split("T")[0];
 
