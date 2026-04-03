@@ -13,12 +13,12 @@ export async function POST(req: Request){
   const headersList = await headers();
   const ip = headersList.get("x-forwarded-for")?.split(",")[0] ?? "127.0.0.1";
   console.log(ip)
-  const { success } = await ratelimit.limit(ip)
+  // const { success } = await ratelimit.limit(ip)
 
-  if (!success) {
-    console.log("Rate limit exceeded for IP:", ip);
-    return NextResponse.json({ error: "Too many requests. Please try again later." }, { status: 429 })
-  }
+  // if (!success) {
+  //   console.log("Rate limit exceeded for IP:", ip);
+  //   return NextResponse.json({ error: "Too many requests. Please try again later." }, { status: 429 })
+  // }
 
   if (!email || !message || !deliverAt || !theme) {
     console.log("Validation failed: Missing fields", { email, message, deliverAt, theme });
